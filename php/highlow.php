@@ -3,16 +3,10 @@
 //define variable as random number.
 
 $number = rand(1 ,100);
+$guess = 0;
 
 
-
-//prompt user to guess a number.
-
-
-
-//if guess is less tan the number, echo 'HIGHER'.
-
-do {
+while ($guess != $number){
 
 	fwrite(STDOUT, 'Guess a number between 1 and 100. ');
 	$guess = fgets(STDIN);
@@ -25,12 +19,9 @@ do {
 		echo "HIGHER\n";
 	}
 
-	} while ($guess != $number);
+} 
 
-if ($guess == $number) {
-	echo "WINNER\n";
-}
-
+echo "WINNER\n";
 
 exit(0);
 
