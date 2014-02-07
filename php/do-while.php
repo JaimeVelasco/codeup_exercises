@@ -1,7 +1,8 @@
 <?php
 
-$a = 100;
-do {echo $a -= 5;
-	echo"\n";	
+$a = 2;
+do {echo "$a\n";
+	$a *= $a;
+	
 }
- while ($a != 0);
+ while ($a <= 1000000);
