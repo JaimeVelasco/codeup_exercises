@@ -5,14 +5,13 @@
 
 $number = rand($argv[1], $argv[2]);
 
-
+//prompt user to guess a number.
+fwrite(STDOUT, "Guess a number between $argv[1] and $argv[2]. ");
+	$guess = fgets(STDIN);	
 
 do {
-
-	//prompt user to guess a number.
-	fwrite(STDOUT, 'Guess a number between 1 and 100. ');
-	$guess = fgets(STDIN);
-
+	
+	
 	//Hints
 	if ($guess > $number) {
 		echo "LOWER\n";
@@ -20,20 +19,23 @@ do {
 
 	if ($guess < $number) {
 		echo "HIGHER\n";
-	}
+	} 
+	fwrite(STDOUT, "Try again!");
+	$guess = fgets(STDIN);
 
-} while($guess != $number);
+} while($guess != $number); 
+
 
 if ($guess == $number) {
 	echo "WINNER\n";
 }
 
 
-exit(0);
+
 
 //end the program.
 
-
+exit(0);
 
 
 
