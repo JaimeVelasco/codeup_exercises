@@ -18,17 +18,17 @@ do {
 	$guess = fgets(STDIN);
 
 	if ($guess > $number) {
-		echo 'LOWER';
+		echo "LOWER\n";
 	}
 
 	if ($guess < $number) {
-		echo 'HIGHER';
+		echo "HIGHER\n";
 	}
 
 	} while ($guess != $number);
 
 if ($guess == $number) {
-	echo "winner\n";
+	echo "WINNER\n";
 }
 
 
