@@ -8,31 +8,35 @@ $number = rand(1 ,100);
 
 //prompt user to guess a number.
 
-fwrite(STDOUT, 'Guess a number between 1 and 100. ');
 
-$guess = fgets(STDIN);
 
 //if guess is less tan the number, echo 'HIGHER'.
 
-if ($guess < $number) {
-	echo "HIGHER\n";
-}
+do {
 
-//if guess is more tan the number, echo 'LOWER.
+	fwrite(STDOUT, 'Guess a number between 1 and 100. ');
+	$guess = fgets(STDIN);
 
-if ($guess > $number) {
-	echo "LOWER\n";
-}
+	if ($guess > $number) {
+		echo 'LOWER';
+	}
 
-//if user is right, echo 'WINNER'.
+	if ($guess < $number) {
+		echo 'HIGHER';
+	}
+
+	} while ($guess != $number);
 
 if ($guess == $number) {
-	echo "WINNER!\n";
+	echo "winner\n";
 }
+
+
+exit(0);
 
 //end the program.
 
-exit(0);
+
 
 
 
