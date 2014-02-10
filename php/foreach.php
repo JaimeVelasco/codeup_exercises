@@ -19,7 +19,7 @@ foreach ($things as $data_type) {
 	// 	echo "{$data_type} is a boolean\n";	
 	// }
 	// elseif (is_array($data_type)) {
-	// 	echo "{$data_type} is an array\n";
+	// 	echo "Array is an array\n";
 	// }
 	// elseif (is_null($data_type)) {
 	// 	echo "{$data_type} is null\n";
