@@ -9,23 +9,32 @@ $things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, 
 
 foreach ($things as $data_type) {
 
-	if (is_int($data_type)){
-		echo "{$data_type} is an integer\n";
+
+	if (is_scalar($data_type)){ 
+		echo "$data_type\n";
 	}
-	elseif(is_float($data_type)) {
-		echo "{$data_type} is a float\n";	
+	else {
+		echo "\n";
 	}
-	elseif (is_bool($data_type)) {
-		echo "{$data_type} is a boolean\n";	
-	}
-	elseif (is_array($data_type)) {
-		echo "{$data_type} is an array\n";
-	}
-	elseif (is_null($data_type)) {
-		echo "{$data_type} is null\n";
-	}
-	elseif (is_string($data_type)) {
-		echo "{$data_type} is a string\n";
-	}
+
+
+	// if (is_int($data_type)){
+	// 	echo "{$data_type} is an integer\n";
+	// }
+	// elseif(is_float($data_type)) {
+	// 	echo "{$data_type} is a float\n";	
+	// }
+	// elseif (is_bool($data_type)) {
+	// 	echo "{$data_type} is a boolean\n";	
+	// }
+	// elseif (is_array($data_type)) {
+	// 	echo "{$data_type} is an array\n";
+	// }
+	// elseif (is_null($data_type)) {
+	// 	echo "{$data_type} is null\n";
+	// }
+	// elseif (is_string($data_type)) {
+	// 	echo "{$data_type} is a string\n";
+	// }
 
 }
