@@ -27,6 +27,10 @@ $books = array(
 //construct a loop that iterates through each book and then each book's keys and values.
 //Output the book's title and list the key value parts for the data.
 
- foreach ($books as $key => $value) {
-	 	echo "$key\n";
+foreach ($books as $title => $book) {
+	echo "$title\n";
+	foreach ($book as $key => $value) {
+	 	echo "$key _ $value\n";
+	}
+
 }
