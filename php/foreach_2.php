@@ -28,9 +28,24 @@ $books = array(
 //Output the book's title and list the key value parts for the data.
 
 foreach ($books as $title => $book) {
-	echo "$title\n";
-	foreach ($book as $key => $value) {
-	 	echo "$key _ $value\n";
+	// echo $title . "\n";
+	// foreach ($book as $key => $value){ 
+	//  	echo $key . " " . $value . "\n";	
+	//  }
+	if ($book['published'] > 1950 {
+		echo $title . "\n";
+		echo  . "\n";
 	}
 
+
+
+
+
+
+
+
+	// if ('published' >= 1950) {
+	// 	echo "$key _ $value";
+	// }
+	// else "\n";
 }
