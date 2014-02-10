@@ -9,15 +9,6 @@ $things = array('Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, 
 
 foreach ($things as $data_type) {
 
-
-	if (is_scalar($data_type)){ 
-		echo "$data_type\n";
-	}
-	else {
-		echo "\n";
-	}
-
-
 	// if (is_int($data_type)){
 	// 	echo "{$data_type} is an integer\n";
 	// }
@@ -36,5 +27,13 @@ foreach ($things as $data_type) {
 	// elseif (is_string($data_type)) {
 	// 	echo "{$data_type} is a string\n";
 	// }
+
+	if (is_scalar($data_type)){ 
+		echo "$data_type\n";
+	}
+	else {
+		echo "\n";
+	}
+
 
 }
