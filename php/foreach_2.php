@@ -27,25 +27,23 @@ $books = array(
 //construct a loop that iterates through each book and then each book's keys and values.
 //Output the book's title and list the key value parts for the data.
 
+
 foreach ($books as $title => $book) {
-	// echo $title . "\n";
-	// foreach ($book as $key => $value){ 
-	//  	echo $key . " " . $value . "\n";	
-	//  }
-	if ($book['published'] > 1950 {
-		echo $title . "\n";
-		echo  . "\n";
-	}
+// 	echo $title . "\n";
+// 	foreach ($book as $key => $value){ 
+// 	 	echo $key . " " . $value . "\n";	
+// 	 }
 
 
+// Only print out the books published past 1950
+    $recent = ($book['published'] > 1950); 
 
+    if ($recent) {
+        echo "$title\n";
+        foreach ($book as $key => $value) {
+            echo ("\t$key $value\n");
+        }
+    }
+}    
+	
 
-
-
-
-
-	// if ('published' >= 1950) {
-	// 	echo "$key _ $value";
-	// }
-	// else "\n";
-}
