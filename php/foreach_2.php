@@ -1,5 +1,6 @@
 <?php
 
+
 $books = array(
     'The Hobbit' => array(
         'published' => 1937,
@@ -22,3 +23,10 @@ $books = array(
         'pages' => 544
     )
 );
+
+//construct a loop that iterates through each book and then each book's keys and values.
+//Output the book's title and list the key value parts for the data.
+
+ foreach ($books as $key => $value) {
+	 	echo "$key\n";
+}
