@@ -2,16 +2,13 @@
 
 
 //Validate all the arguments and display an error if not numeric
+
 function validate($a, $b) {
 	if (!is_numeric($a) || !is_numeric($b)) {
 
 //Make the error messages show the values of the arguments.   
 
-	    return "ERROR: both values must be numbers\n";
-
-	    var_dump($a);
-	    var_dump($b);
-	   
+	    echo "ERROR: both {$a} and {$b} must be numbers\n";	   
 	}else
 		{return (FALSE);
 	}
@@ -53,9 +50,9 @@ function modulus($a, $b) {
 	return ($a % $b);
 }
 
-	echo add(4, 5) . PHP_EOL;
-	echo subtract(2, 'three') . PHP_EOL;
-	echo multiply(4, 8) . PHP_EOL;
-	echo divide(0, 10) . PHP_EOL;
-	echo modulus(3, 5) . PHP_EOL;
+	 echo add(2, 5) . PHP_EOL;
+	 echo subtract(2, 5) . PHP_EOL;
+	 echo multiply(4, 'three') . PHP_EOL;
+	 echo divide(34, 0) . PHP_EOL;
+	 echo modulus(3, 5) . PHP_EOL;
 
