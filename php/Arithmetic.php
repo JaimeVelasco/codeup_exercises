@@ -5,12 +5,13 @@
 
 function validate($a, $b) {
 	if (!is_numeric($a) || !is_numeric($b)) {
-
+		echo "ERROR: both {$a} and {$b} must be numbers\n";
 //Make the error messages show the values of the arguments.   
-
-	    echo "ERROR: both {$a} and {$b} must be numbers\n";	   
-	}else
-		{return (FALSE);
+			var_dump($a);
+			var_dump($b);
+	    return true;	   
+	}else{
+		return false;
 	}
 
 }	
@@ -35,11 +36,9 @@ function multiply($a, $b) {
 //echo error if user tries to divide by 0.
 
 function divide($a, $b) {
-   validate ($a, $b);
-   if ($a === 0 || $b === 0) {
-     
-    echo "Cannot divide by 0 dummy"; 
-	return (FALSE);  
+   if (validate ($a, $b) || ($b == 0)) {    
+    echo "Cannot divide by 0 dummy\n"; 
+	    return false; 
    }else{
       	return ($a / $b);
 		}
@@ -50,9 +49,9 @@ function modulus($a, $b) {
 	return ($a % $b);
 }
 
-	 echo add(2, 5) . PHP_EOL;
+	 echo add(3, 5) . PHP_EOL;
 	 echo subtract(2, 5) . PHP_EOL;
-	 echo multiply(4, 'three') . PHP_EOL;
-	 echo divide(34, 0) . PHP_EOL;
+	 echo multiply(4, 4) . PHP_EOL;
+	 echo divide(34, 13) . PHP_EOL;
 	 echo modulus(3, 5) . PHP_EOL;
 
