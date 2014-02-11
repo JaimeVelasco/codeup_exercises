@@ -2,43 +2,32 @@
 
 
 //Validate all the arguments and display an error if not numeric
-//Make the error messages show the values of the arguments.   
-
-
 function validate($a, $b) {
-
-	$message = " ";
-
-	if (!is_numeric($a))  {
-		$message .= $a;
+	if (!is_numeric($a) || !is_numeric($b)) {
+		
+//Make the error messages show the values of the arguments.   
+	   
+	    echo "ERROR: both values must be numbers\n";
+	    var_dump($a);
+	    var_dump($b);
+	    
 	}
-	if (!is_numeric($b)) {
-		$message .= " " . $b;
-	}
-    if ($message){
-    	echo "ERROR: must use numbers" . $message;
-    exit(0);	
-    }
-}    
-
-
-
-
+}	
 
 
 function add($a, $b) {
     validate ($a, $b);
-    echo ($a + $b) . "\n";
+    return ($a + $b);
 }
 
 function subtract($a, $b) {
     validate ($a, $b);
-    echo ($a - $b) . "\n";
+    return ($a - $b);
 }
 
 function multiply($a, $b) {
     validate ($a, $b);
-    echo ($a * $b) . "\n";
+    return ($a * $b);
 }
 
 
@@ -47,20 +36,20 @@ function multiply($a, $b) {
 function divide($a, $b) {
    validate ($a, $b);
    if ($a === 0 || $b === 0) {
-      	echo "Cannot divide by 0 dummy \n";
+      	echo "Cannot divide by 0 dummy";
    }else{
-      	echo ($a / $b) . "\n";
+      	return ($a / $b);
 		}
 }
 
 function modulus($a, $b) {
 	validate ($a, $b);
-	echo ($a % $b) . "\n";
+	return ($a % $b);
 }
 
-    	add(3, "2");
-		subtract(20, 12);
-		multiply(4, 8);
-		divide(200, 0);
-		modulus(3, 5);
+	echo add(3, 5) . PHP_EOL;
+	echo subtract('apples', 3) . PHP_EOL;
+	echo multiply(4, 8) . PHP_EOL;
+	echo divide(200, 0) . PHP_EOL;
+	echo modulus(3, 5) . PHP_EOL;
 
