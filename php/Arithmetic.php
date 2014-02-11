@@ -2,13 +2,29 @@
 
 
 //Validate all the arguments and display an error if not numeric
+//Make the error messages show the values of the arguments.   
+
+
 function validate($a, $b) {
-    if (!is_numeric($a) || !is_numeric($b)) {
-    	
-	    echo "ERROR: both values must be numbers" . "\n";
-	    exit(0);
+
+	$message = " ";
+
+	if (!is_numeric($a))  {
+		$message .= $a;
 	}
-}
+	if (!is_numeric($b)) {
+		$message .= " " . $b;
+	}
+    if ($message){
+    	echo "ERROR: must use numbers" . $message;
+    exit(0);	
+    }
+}    
+
+
+
+
+
 
 function add($a, $b) {
     validate ($a, $b);
@@ -42,7 +58,7 @@ function modulus($a, $b) {
 	echo ($a % $b) . "\n";
 }
 
-    	add(3, 5);
+    	add(3, "2");
 		subtract(20, 12);
 		multiply(4, 8);
 		divide(200, 0);
