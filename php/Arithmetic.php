@@ -30,11 +30,11 @@ function multiply($a, $b) {
 
 function divide($a, $b) {
    validate ($a, $b);
-  //  if ($a === 0 || $b === 0) {
-  //     	echo "Cannot divide by 0 dummy \n";
-  //  }else{
-  //     	echo ($a / $b) . "\n";
-		// }
+   if ($a === 0 || $b === 0) {
+      	echo "Cannot divide by 0 dummy \n";
+   }else{
+      	echo ($a / $b) . "\n";
+		}
 }
 
 function modulus($a, $b) {
