@@ -12,7 +12,7 @@ function validate($a, $b) {
 	    return true;	   
 	}else{
 		return false;
-	}
+		}
 
 }	
 
