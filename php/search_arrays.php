@@ -3,10 +3,11 @@
 
 
 function check_array($names, $compare){
-	if (is_array($names) || is_array($compare)) {
-		echo 'TRUE' . PHP_EOL;
+	if (!is_array($names) || !is_array($compare)) {
+		echo "ERROR: both \$names and \$compare must be arrays\n";
+		return false;
 	}else{
-		echo 'FALSE' . PHP_EOL;
+		return true;
 	}
 }
 
@@ -21,6 +22,7 @@ $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
 
 check_array($names, $compare);
+
 
 
 
