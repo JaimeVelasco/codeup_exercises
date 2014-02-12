@@ -9,6 +9,7 @@ $items = array();
     // [1] TODO item 1
     // [2] TODO item 2 - blah
     // DO NOT USE ECHO, USE RETURN
+
 function list_items($list){
    $newvar =  ""; 
     foreach ($list as $key => $value) {  
@@ -25,11 +26,10 @@ function get_input($upper = FALSE) {
     $input = trim(fgets(STDIN));
 
 // Return filtered STDIN input
+
     return $upper ? strtoupper($input) : $input;
 }
-
-
-        
+      
 // The loop!
 do {    
 
@@ -37,16 +37,30 @@ do {
     echo list_items($items);
 
  // Show the menu options
-    echo '(N)ew item, (R)emove item, (Q)uit : ';
+    echo '(N)ew item, (R)emove item, (S)ort items, (Q)uit : ';
     $input = get_input(TRUE);
 
 // Check for actionable input
     if ($input == 'N') {
+
 // Ask for entry
         echo 'Enter item: ';
-         $items[] = trim(fgets(STDIN));
+         
 // Add entry to list array
-    } elseif ($input == 'R') {
+        $items[] = trim(fgets(STDIN));  
+    }
+// Add (S)ort items to menu      
+
+    elseif ($input == 'S') {
+        echo '(A) to Z or (Z) to A? : ';
+        $input = get_input(TRUE);
+            if ($input == 'A') {
+                sort($items);                
+            }elseif ($input == 'Z') {
+                rsort($items);
+            }
+    }
+    elseif ($input == 'R') {
        
         // Remove which item?
         echo 'Enter item number to remove: ';
