@@ -3,11 +3,39 @@
 // Create array to hold list of todo items
 $items = array();
 
+// List array items formatted for CLI
+    // Return string of list items separated by newlines.
+    // Should be listed [KEY] Value like this:
+    // [1] TODO item 1
+    // [2] TODO item 2 - blah
+    // DO NOT USE ECHO, USE RETURN
+function list_items($list){
+   $newvar =  ""; 
+    foreach ($list as $key => $value) {
+     $newvar .= $value . PHO_EOL;
+    }
+    return $newvar;
+}
+
+    
+// Get STDIN, strip whitespace and newlines, 
+// and convert to uppercase if $upper is true
+function get_input($upper = FALSE) {
+    // Return filtered STDIN input
+    $input = trim(fgets(STDIN));
+    return $upper ? strtoupper($input) : $input;
+}
+
+
+
+
+
+
+        
 // The loop!
 do {
     // Iterate through list items
-    foreach ($items as $key => $item) {
-        
+    foreach ($items as $key => $item) {        
         $key++;
         // Display each item and a newline
         echo "[{$key}] {$item}\n";
