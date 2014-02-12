@@ -11,9 +11,8 @@ $items = array();
     // DO NOT USE ECHO, USE RETURN
 function list_items($list){
    $newvar =  ""; 
-    foreach ($list as $key => $value) {
-        $key++;   
-        $newvar .= "$key-" . "$value\t" . " Item-" . $key . PHP_EOL;
+    foreach ($list as $key => $value) {  
+        $newvar .= "[" . ($key + 1) .  "]" . "$value\t" .  PHP_EOL;
     }
     return $newvar;
 }
@@ -23,29 +22,30 @@ function list_items($list){
 // and convert to uppercase if $upper is true
 
 function get_input($upper = FALSE) {
-
-    // Return filtered STDIN input
     $input = trim(fgets(STDIN));
+
+// Return filtered STDIN input
     return $upper ? strtoupper($input) : $input;
 }
 
 
         
 // The loop!
-do {         
-     // Echo the list produced by the function    
+do {    
+
+// Echo the list produced by the function    
     echo list_items($items);
 
-    // Show the menu options
+ // Show the menu options
     echo '(N)ew item, (R)emove item, (Q)uit : ';
     $input = get_input(TRUE);
 
-    // Check for actionable input
+// Check for actionable input
     if ($input == 'N') {
-        // Ask for entry
+// Ask for entry
         echo 'Enter item: ';
          $items[] = trim(fgets(STDIN));
-        // Add entry to list array
+// Add entry to list array
     } elseif ($input == 'R') {
        
         // Remove which item?
