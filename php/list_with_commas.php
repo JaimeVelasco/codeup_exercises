@@ -1,17 +1,15 @@
 <?php
 
 // Converts array into list n1, n2, ..., and n3
-function humanized_list($input, $sort = FALSE) {
+function humanized_list($input){
 
-	$input = explode(', ', $input);
+	$array = explode(', ', $input);
+	$sortArray = sort($array);
+	$popped = array_pop($array);
+	$result = implode(', ', $array);
+	return ($result . ", and " . $popped);
 
-	if ($sort == true) {
-		sort($input);
-	} 
-
-	$lastItem = array_pop($input);
-	$input = implode(', ', $input);
-	return $input . ' and ' . $lastItem;
+	
 }
 
 // List of famous peeps
