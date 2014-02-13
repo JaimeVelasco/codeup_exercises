@@ -46,7 +46,7 @@ do {
             if ($order_input == 'B')  {    
 
                 array_unshift($items, $todo_item);
-                
+
             }else{
                  $items[] = $todo_item;
             }                         
@@ -69,6 +69,26 @@ do {
 
             }
     }
+
+
+    elseif ($input == 'F') {
+             echo 'You just removed the first item : ';
+            $admin_removefirst = get_input(TRUE);
+           
+            array_shift($items);
+    }
+
+
+    elseif ($input == 'L') {
+         echo 'You just removed the last item : ';
+        $admin_removelast = get_input(TRUE);
+       
+        array_pop($items);
+}
+
+
+
+
     elseif ($input == 'R') {
        
         
