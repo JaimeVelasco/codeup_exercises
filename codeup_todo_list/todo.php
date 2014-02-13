@@ -73,7 +73,7 @@ do {
 
     elseif ($input == 'F') {
              echo 'You just removed the first item : ';
-            $admin_removefirst = get_input(TRUE);
+            // $admin_removefirst = get_input(TRUE);
            
             array_shift($items);
     }
@@ -81,7 +81,7 @@ do {
 
     elseif ($input == 'L') {
          echo 'You just removed the last item : ';
-        $admin_removelast = get_input(TRUE);
+        // $admin_removelast = get_input(TRUE);
        
         array_pop($items);
 }
