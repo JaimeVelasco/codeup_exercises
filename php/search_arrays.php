@@ -20,6 +20,16 @@ $names = ['Tina', 'Dana', 'Mike', "Amy", 'Adam'];
 $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
 
+foreach ($names as $value) {
+	$query = ['Tina', 'Bob'];
+	$result = array_search($query, $names);
+}
+
+if ($result == false) {
+	echo 'something';
+}
+
+
 
 check_array($names, $compare);
 

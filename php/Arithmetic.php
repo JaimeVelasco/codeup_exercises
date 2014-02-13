@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 
 //Validate all the arguments and display an error if not numeric
