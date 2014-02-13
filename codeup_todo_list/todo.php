@@ -35,11 +35,21 @@ do {
 
     if ($input == 'N') {
 
+        echo 'Would you like to add it to the (B)eginning ot the (E)nd of the list? : ';
 
-        echo 'Enter item: ';
-         
+            $order_input = get_input(TRUE);
 
-        $items[] = trim(fgets(STDIN));  
+            echo 'Enter item: ';  
+
+            $todo_item = trim(fgets(STDIN));
+
+            if ($order_input == 'B')  {    
+
+                array_unshift($items, $todo_item);
+                
+            }else{
+                 $items[] = $todo_item;
+            }                         
     }
      
 
@@ -56,7 +66,7 @@ do {
             }elseif ($input == 'Z') {
 
                 rsort($items);
-                
+
             }
     }
     elseif ($input == 'R') {
