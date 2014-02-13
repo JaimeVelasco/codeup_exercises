@@ -1,37 +1,38 @@
 <?php
 
 
-
-function check_array($names, $compare){
-	if (!is_array($names) || !is_array($compare)) {
-		echo "ERROR: both \$names and \$compare must be arrays\n";
-		return false;
-	}else{
-		return true;
-	}
-}
-
-
-
-
-// first names
 $names = ['Tina', 'Dana', 'Mike', "Amy", 'Adam'];
 
 $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
 
-foreach ($names as $value) {
-	$query = ['Tina', 'Bob'];
-	$result = array_search($query, $names);
+function search($name, $array) {
+	$search = array_search($name, $array);
+	if (is_numeric($search)) {
+		return TRUE;
+	} else{
+		return FALSE;
+	}
 }
 
-if ($result == false) {
-	echo 'something';
+function compare($array1, $array2) {
+	$count = 0;
+	foreach ($array1 as $key => $value) {
+		$search = array_search($value, $array2);
+		if (is_numeric($search)) {
+			$count++;
+		}
+	}
+	return $count;
 }
 
 
 
-check_array($names, $compare);
+
+var_dump(search('Tina', $names));
+var_dump(search('Bob', $names));
+
+echo "There are " . compare($names, $compare) . " names in common.\n";
 
 
 
