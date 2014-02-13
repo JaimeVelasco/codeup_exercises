@@ -44,12 +44,19 @@ do {
      
 
     elseif ($input == 'S') {
+
         echo '(A) to Z or (Z) to A? : ';
+
         $input = get_input(TRUE);
+
             if ($input == 'A') {
-                sort($items);                
+
+                sort($items);   
+
             }elseif ($input == 'Z') {
+
                 rsort($items);
+                
             }
     }
     elseif ($input == 'R') {
