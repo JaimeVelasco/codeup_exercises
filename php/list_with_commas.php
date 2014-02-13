@@ -6,8 +6,8 @@ function humanized_list($input){
 	$array = explode(', ', $input);
 	$sortArray = sort($array);
 	$popped = array_pop($array);
-	$result = implode(', ', $array);
-	return ($result . ", and " . $popped);
+	return $result = implode(', ', $array) . ", and " . $popped;
+	 
 
 	
 }
