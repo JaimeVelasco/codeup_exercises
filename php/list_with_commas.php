@@ -5,7 +5,7 @@ function humanized_list($input, $sort = FALSE) {
 
 	$input = explode(', ', $input);
 
-	if ($sort == TRUE) {
+	if ($sort == true) {
 		sort($input);
 	} 
 
