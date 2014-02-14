@@ -13,12 +13,12 @@ function list_items($list){
 }
 
  
-function open_file($items, $file){
+function open_file($file){
     $filename = $file;
     $handle = fopen($filename, "r");
     $contents = fread($handle, filesize($filename));
-    // echo $contents . PHP_EOL;
     fclose($handle);
+    return explode("\n", $contents);
 }
 
 
@@ -28,6 +28,8 @@ function get_input($upper = FALSE){
 
     return $upper ? strtoupper($input) : $input;
 }
+
+
       
 
 do {    
@@ -48,7 +50,7 @@ do {
 
             echo 'Enter item: ';  
 
-            $todo_item = get_input(TRUE);
+            $todo_item = get_input();
 
             if ($order_input == 'B')  {    
 
@@ -82,12 +84,11 @@ do {
     elseif ($input == 'O') {
             echo 'Please type the path to the file :'; 
             $file = get_input();
-                
-            open_file($items, $file) . "PHP_EOL";
-                           
-        }
+            $array = open_file($file);
+            $items = array_merge($items, $array);
+            
 
-
+ } 
 
     elseif ($input == 'F') {
              echo 'You just removed the first item : ';
