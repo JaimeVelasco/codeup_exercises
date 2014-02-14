@@ -6,7 +6,7 @@
 echo "Enter the amount that you want want to convert: $";
 $amount = trim(fgets(STDIN));
 echo "What currency do you want to convert to? (E)uros, (P)esos, (B)ritish Pounds: ";
-$input = trim(fgets(STDIN));
+$input = strtoupper(trim(fgets(STDIN)))   ;
 
 // echo var_dump($number);
 
@@ -16,16 +16,17 @@ $peso = 13;
 
 
 
-	if ($input == "E || e") {
-	$euro = $amount * $euro;
-	echo "$amount USD amounts to $euro Euros";
-}elseif ($input == "P || p") {
-	$pound = $amount * $peso;
-	echo "$amount USD amounts to $pound Pounds";
-}elseif ($input == "B || b") {
-	$peso = $amount * $pound;
-	echo "$amount USD amounts to $peso Pesos";	
+if ($input == 'E') {
+	$euros = $amount * $euro;
+	echo "$amount USD is equivalent to $euros Euros\n";
+}elseif ($input == 'P') {
+	$pesos = $amount * $peso;
+	echo "$amount USD is equivalent to $pesos Pesos\n";
+}elseif ($input == 'B') {
+	$pounds = $amount * $pound;
+	echo "$amount USD is equivalent to $pounds Pounds\n";	
 }
+
 				
 
 			

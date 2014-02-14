@@ -29,8 +29,13 @@ function get_input($upper = FALSE){
     return $upper ? strtoupper($input) : $input;
 }
 
-
-      
+function write_file ($items, $file){
+        $filename = $file;
+        $handle = fopen($filename, "w");
+        $item = implode("\n", $items);
+        fwrite($handle, $item);
+        fclose($handle);
+    }
 
 do {    
 
@@ -38,13 +43,13 @@ do {
     echo list_items($items);
 
  
-    echo '(N)ew item, (R)emove item, (S)ort items, (O)pen file, (Q)uit : ';
+    echo '(N)ew item, (R)emove item, (S)ort items, (O)pen file, Sa(V)e, (Q)uit : ';
     $input = get_input(TRUE);
 
 
     if ($input == 'N') {
 
-        echo 'Would you like to add it to the (B)eginning ot the (E)nd of the list? : ';
+        echo 'Would you like to add it to the (B)eginning or the (E)nd of the list? : ';
 
             $order_input = get_input(TRUE);
 
@@ -86,9 +91,17 @@ do {
             $file = get_input();
             $array = open_file($file);
             $items = array_merge($items, $array);
-            
+    } 
 
- } 
+
+
+    elseif ($input == 'V') {
+        echo 'Please type the path to the file :'; 
+        $filename = (strtolower(get_input()));
+        write_file($items, $filename);
+    }
+
+
 
     elseif ($input == 'F') {
              echo 'You just removed the first item : ';
