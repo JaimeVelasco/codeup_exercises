@@ -12,12 +12,19 @@ function list_items($list){
     return $newvar;
 }
 
-    
+ 
+function open_file($items, $file){
+    $filename = $file;
+    $handle = fopen($filename, "r");
+    $contents = fread($handle, filesize($filename));
+    // echo $contents . PHP_EOL;
+    fclose($handle);
+}
 
-function get_input($upper = FALSE) {
+
+
+function get_input($upper = FALSE){
     $input = trim(fgets(STDIN));
-
-
 
     return $upper ? strtoupper($input) : $input;
 }
@@ -29,7 +36,7 @@ do {
     echo list_items($items);
 
  
-    echo '(N)ew item, (R)emove item, (S)ort items, (Q)uit : ';
+    echo '(N)ew item, (R)emove item, (S)ort items, (O)pen file, (Q)uit : ';
     $input = get_input(TRUE);
 
 
@@ -41,7 +48,7 @@ do {
 
             echo 'Enter item: ';  
 
-            $todo_item = trim(fgets(STDIN));
+            $todo_item = get_input(TRUE);
 
             if ($order_input == 'B')  {    
 
@@ -71,10 +78,20 @@ do {
     }
 
 
+
+    elseif ($input == 'O') {
+            echo 'Please type the path to the file :'; 
+            $file = get_input();
+                
+            open_file($items, $file) . "PHP_EOL";
+                           
+        }
+
+
+
     elseif ($input == 'F') {
              echo 'You just removed the first item : ';
-            // $admin_removefirst = get_input(TRUE);
-           
+            
             array_shift($items);
     }
 
