@@ -3,7 +3,7 @@
 //Prompt user for a sentence.
 echo "please enter a sentence in English \n";
 $input = trim(fgets(STDIN));
-//Explode string inet_ntop(in_addr)
+
 $sentence = explode(' ', $input);
 
 
@@ -18,3 +18,4 @@ foreach ($sentence as $array) {
 }	
 
 echo implode(' ', $piglatin);
+echo"\n";
