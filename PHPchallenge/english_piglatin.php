@@ -1,7 +1,8 @@
 <?php
 
 //Prompt user for a sentence.
-echo "please enter a sentence in English \n";
+echo"Hello, this is an english to piglatin translator.\n";
+echo "Please enter a sentence in English \n";
 $input = trim(fgets(STDIN));
 
 $sentence = explode(' ', $input);
@@ -17,5 +18,7 @@ foreach ($sentence as $array) {
 
 }	
 
+
+echo"The translated sentence is:\n";
 echo implode(' ', $piglatin);
 echo"\n";
