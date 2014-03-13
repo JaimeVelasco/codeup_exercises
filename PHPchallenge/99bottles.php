@@ -9,5 +9,10 @@ $j = $i -1;
 		echo "$i bottle of beer on the wall $i bottle of beer. Take one down and pass it around no more bottles of beer on the wall.\n";
 	}else{
 		echo "nothing";
+<<<<<<< HEAD
 		}		
 	}		 	
+=======
+	 }		
+	}		 	
+>>>>>>> FETCH_HEAD
