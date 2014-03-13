@@ -1,5 +1,5 @@
 <?php
-
+  
 
 $items = array();
 
@@ -119,7 +119,6 @@ do {
 
 
 
-
     elseif ($input == 'R') {
        
         
@@ -136,8 +135,6 @@ do {
 
 } while ($input != 'Q');
 
-
 echo "Goodbye!\n";
-
 
 exit(0);
