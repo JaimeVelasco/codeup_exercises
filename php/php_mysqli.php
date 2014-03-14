@@ -95,11 +95,12 @@ $national_parks = [
 
 
 foreach ($national_parks as $national_park) {
-    $query = "INSERT INTO national_parks(name, location, date_established, area_in_acres, description) VALUES ('{$national_park['name']}',
-    '{$national_park['location']}',
-    '{$national_park['date_established']}', 
-    '{$national_park['area_in_acres']}', 
-    '{$national_park['description']}');";
+    $query = "INSERT INTO national_parks(name, location, date_established, area_in_acres, description) 
+	    	VALUES ('{$national_park['name']}',
+				    '{$national_park['location']}',
+				    '{$national_park['date_established']}', 
+				    '{$national_park['area_in_acres']}', 
+				    '{$national_park['description']}');";
     $mysqli->query($query);
 }
 
